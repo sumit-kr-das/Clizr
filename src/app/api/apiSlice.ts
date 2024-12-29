@@ -8,7 +8,7 @@ interface RefreshResponse {
 }
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: process.env.API_BASE_URL,
+    baseUrl: process.env.VITE_APP_API_BASE_URL,
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const token = (getState() as RootState).auth.access_token;
