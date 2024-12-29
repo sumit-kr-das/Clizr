@@ -1,11 +1,12 @@
-import { Button } from './components/ui/button';
+import { RouterProvider } from 'react-router-dom';
+import ScrollTop from './components/global/ScrollTop';
+import router from './routes';
 
 function App() {
     return (
-        <div>
-            <h1 className="bg-red-100">Hello</h1>
-            <Button>Click Here</Button>
-        </div>
+        <ScrollTop>
+            <RouterProvider router={router} />
+        </ScrollTop>
     );
 }
 
