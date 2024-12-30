@@ -2,7 +2,7 @@ import { lazy } from 'react';
 
 // project import
 import Loadable from '@/components/global/Loadable';
-import LoginLayout from '@/layout/LoginLayout';
+import LoginLayout from '@/layout/AuthLayout';
 
 // render - login
 const AuthLogin = Loadable(lazy(() => import('@/pages/authentication/login')));
