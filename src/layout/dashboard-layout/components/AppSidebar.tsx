@@ -60,13 +60,13 @@ const data = {
     navMain: [
         {
             title: 'Inbox',
-            url: '/dashboard',
+            url: '/',
             icon: Inbox,
             isActive: true,
         },
         {
             title: 'My issues',
-            url: '/company',
+            url: '/issues',
             icon: Bug,
             isActive: true,
         },
