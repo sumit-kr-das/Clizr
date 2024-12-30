@@ -1,40 +1,27 @@
-'use client';
-
 import {
     BadgeCheck,
     Bell,
-    BookOpen,
-    Bot,
-    CalendarDays,
-    ChevronRight,
+    Box,
+    Bug,
     ChevronsUpDown,
-    CoinsIcon,
     Command,
+    Copy,
     CreditCard,
     Folder,
-    Frame,
-    Handshake,
-    HelpCircle,
-    LifeBuoy,
+    Github,
+    Inbox,
+    Layers,
     LogOut,
-    Map,
     MoreHorizontal,
-    PieChart,
-    Plane,
-    Send,
+    Plus,
+    RefreshCw,
     Share,
     Sparkles,
-    SquareTerminal,
     Trash2,
-    Users,
 } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleTrigger,
-} from '@/components/ui/collapsible';
+import { Collapsible } from '@/components/ui/collapsible';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -44,6 +31,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { Separator } from '@/components/ui/separator';
 import {
     Sidebar,
     SidebarContent,
@@ -56,12 +44,8 @@ import {
     SidebarMenuAction,
     SidebarMenuButton,
     SidebarMenuItem,
-    SidebarMenuSub,
-    SidebarMenuSubButton,
-    SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
 import { Link } from 'react-router-dom';
-import { Separator } from '@/components/ui/separator';
 
 export const iframeHeight = '800px';
 
@@ -69,194 +53,56 @@ export const description = 'An inset sidebar with secondary navigation.';
 
 const data = {
     user: {
-        name: 'shadcn',
-        email: 'm@example.com',
+        name: 'Sumit Kumar Das',
+        email: 'sumit@gmail.com',
         avatar: '/avatars/shadcn.jpg',
     },
     navMain: [
         {
-            title: 'Dashboard',
+            title: 'Inbox',
             url: '/dashboard',
-            icon: SquareTerminal,
+            icon: Inbox,
             isActive: true,
-            // items: [
-            //   {
-            //     title: "Dashboard",
-            //     url: "#",
-            //   },
-            // ],
         },
         {
-            title: 'Company',
+            title: 'My issues',
             url: '/company',
-            icon: SquareTerminal,
+            icon: Bug,
             isActive: true,
         },
+    ],
+    workspace: [
         {
-            title: 'Employee',
-            url: '/employee',
-            icon: Bot,
-            // items: [
-            //   {
-            //     title: "Employee",
-            //     url: "#",
-            //   },
-            // ],
+            name: 'Workspace',
+            url: '#',
+            icon: Box,
         },
         {
-            title: 'Jobs',
-            url: '/jobs',
-            icon: Handshake,
-        },
-        {
-            title: 'Attendance',
-            url: '/attendance/dashboard',
-            icon: BookOpen,
-            items: [
-                {
-                    title: 'Dashboard',
-                    url: '/attendance/dashboard',
-                },
-                {
-                    title: 'View Attendance',
-                    url: '/attendance/view',
-                },
-                {
-                    title: 'Attendance Request',
-                    url: '/attendance/request',
-                },
-                {
-                    title: 'Late Come Early Out',
-                    url: '/attendance/inout',
-                },
-            ],
-        },
-        {
-            title: 'Leaves',
-            url: '/leave/dashboard',
-            icon: Plane,
-            items: [
-                {
-                    title: 'Dashboard',
-                    url: '/leave/dashboard',
-                },
-                {
-                    title: 'Leave Types',
-                    url: '/leave/leave-type',
-                },
-                {
-                    title: 'Assigned Leaves',
-                    url: '/leave/assigned-leave',
-                },
-                {
-                    title: 'Leave Request',
-                    url: '/leave/leave-request',
-                },
-            ],
-        },
-        {
-            title: 'Payroll',
-            url: '/payroll/dashboard',
-            icon: CoinsIcon,
-            items: [
-                {
-                    title: 'Dashboard',
-                    url: '/payroll/dashboard',
-                },
-                {
-                    title: 'Payroll Contracts',
-                    url: '/payroll/payroll-contracts',
-                },
-                {
-                    title: 'Allowances',
-                    url: '/payroll/allowances',
-                },
-                {
-                    title: 'Deductions',
-                    url: '/payroll/deductions',
-                },
-                {
-                    title: 'Payslips',
-                    url: '/payroll/payslips',
-                },
-            ],
-        },
-        {
-            title: 'Onboarding',
-            url: '/onboarding/job-post',
-            icon: Users,
-            items: [
-                {
-                    title: 'Job Post',
-                    url: '/onboarding/job-post',
-                },
-                {
-                    title: 'View Candidates',
-                    url: '/onboarding/view-candidates',
-                },
-                {
-                    title: 'Interview',
-                    url: '/onboarding/interview',
-                },
-                {
-                    title: 'Offer Letter',
-                    url: '/onboarding/offer-letter',
-                },
-            ],
-        },
-        {
-            title: 'Help Desk',
-            url: '/help-desk/dashboard',
-            icon: HelpCircle,
-            items: [
-                {
-                    title: 'Dashboard',
-                    url: '/help-desk/dashboard',
-                },
-                {
-                    title: 'View Query',
-                    url: '/help-desk/view-query',
-                },
-            ],
-        },
-        {
-            title: 'Holiday Calender',
-            url: '/holiday-calendar',
-            icon: CalendarDays,
-        },
-        {
-            title: 'Terms & Condition',
-            url: '/terms-and-condition',
-            icon: Handshake,
+            name: 'Others',
+            url: '#',
+            icon: Layers,
         },
     ],
-    navSecondary: [
+    others: [
         {
-            title: 'Support',
+            name: 'Import issues',
             url: '#',
-            icon: LifeBuoy,
+            icon: Copy,
         },
         {
-            title: 'Feedback',
+            name: 'Invite people',
             url: '#',
-            icon: Send,
-        },
-    ],
-    projects: [
-        {
-            name: 'Design Engineering',
-            url: '#',
-            icon: Frame,
+            icon: Plus,
         },
         {
-            name: 'Sales & Marketing',
+            name: 'Cycles',
             url: '#',
-            icon: PieChart,
+            icon: RefreshCw,
         },
         {
-            name: 'Travel',
+            name: 'Link GitHub',
             url: '#',
-            icon: Map,
+            icon: Github,
         },
     ],
 };
@@ -268,7 +114,7 @@ export default function AppSidebar() {
                 <SidebarHeader>
                     <SidebarMenu>
                         <SidebarMenuItem>
-                            <SidebarMenuButton size="lg" asChild>
+                            <SidebarMenuButton size="sm" asChild>
                                 <a href="#">
                                     <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                                         <Command className="size-4" />
@@ -284,12 +130,11 @@ export default function AppSidebar() {
                                 </a>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
-                        <Separator />
                     </SidebarMenu>
                 </SidebarHeader>
                 <SidebarContent>
                     <SidebarGroup>
-                        <SidebarGroupLabel>Platform</SidebarGroupLabel>
+                        <SidebarGroupLabel>Main</SidebarGroupLabel>
                         <SidebarMenu>
                             {data.navMain.map(item => (
                                 <Collapsible
@@ -307,56 +152,15 @@ export default function AppSidebar() {
                                                 <span>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
-                                        {item.items?.length ? (
-                                            <>
-                                                <CollapsibleTrigger asChild>
-                                                    <SidebarMenuAction className="data-[state=open]:rotate-90">
-                                                        <ChevronRight />
-                                                        <span className="sr-only">
-                                                            Toggle
-                                                        </span>
-                                                    </SidebarMenuAction>
-                                                </CollapsibleTrigger>
-                                                <CollapsibleContent>
-                                                    <SidebarMenuSub>
-                                                        {item.items?.map(
-                                                            subItem => (
-                                                                <SidebarMenuSubItem
-                                                                    key={
-                                                                        subItem.title
-                                                                    }
-                                                                >
-                                                                    <SidebarMenuSubButton
-                                                                        asChild
-                                                                    >
-                                                                        <Link
-                                                                            to={
-                                                                                subItem.url
-                                                                            }
-                                                                        >
-                                                                            <span>
-                                                                                {
-                                                                                    subItem.title
-                                                                                }
-                                                                            </span>
-                                                                        </Link>
-                                                                    </SidebarMenuSubButton>
-                                                                </SidebarMenuSubItem>
-                                                            )
-                                                        )}
-                                                    </SidebarMenuSub>
-                                                </CollapsibleContent>
-                                            </>
-                                        ) : null}
                                     </SidebarMenuItem>
                                 </Collapsible>
                             ))}
                         </SidebarMenu>
                     </SidebarGroup>
                     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-                        <SidebarGroupLabel>Projects</SidebarGroupLabel>
+                        <SidebarGroupLabel>Workspace</SidebarGroupLabel>
                         <SidebarMenu>
-                            {data.projects.map(item => (
+                            {data.workspace.map(item => (
                                 <SidebarMenuItem key={item.name}>
                                     <SidebarMenuButton asChild>
                                         <a href={item.url}>
@@ -403,15 +207,16 @@ export default function AppSidebar() {
                             </SidebarMenuItem>
                         </SidebarMenu>
                     </SidebarGroup>
-                    <SidebarGroup className="mt-auto">
+                    <SidebarGroup>
                         <SidebarGroupContent>
+                            <SidebarGroupLabel>Other</SidebarGroupLabel>
                             <SidebarMenu>
-                                {data.navSecondary.map(item => (
-                                    <SidebarMenuItem key={item.title}>
+                                {data.others.map(item => (
+                                    <SidebarMenuItem key={item.name}>
                                         <SidebarMenuButton asChild size="sm">
                                             <a href={item.url}>
                                                 <item.icon />
-                                                <span>{item.title}</span>
+                                                <span>{item.name}</span>
                                             </a>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
