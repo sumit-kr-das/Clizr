@@ -73,12 +73,12 @@ const data = {
     ],
     workspace: [
         {
-            name: 'Workspace',
+            name: 'Projects',
             url: '#',
             icon: Box,
         },
         {
-            name: 'Others',
+            name: 'Views',
             url: '#',
             icon: Layers,
         },
@@ -114,7 +114,7 @@ export default function AppSidebar() {
                 <SidebarHeader>
                     <SidebarMenu>
                         <SidebarMenuItem>
-                            <SidebarMenuButton size="sm" asChild>
+                            <SidebarMenuButton size="lg" asChild>
                                 <a href="#">
                                     <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                                         <Command className="size-4" />
