@@ -1,8 +1,9 @@
 import { lazy } from 'react';
 
 // project import
-import DashboardLayout from '@/layout/DashboardLayout';
+import DashboardLayout from '@/layout/dashboard-layout/DashboardLayout';
 import Loadable from '@/components/global/Loadable';
+import InboxPage from '@/pages/dashboard/inbox';
 
 const DashboardDefault = Loadable(
     lazy(() => import('@/pages/dashboard/index'))
@@ -16,7 +17,7 @@ const MainRoutes = {
     children: [
         {
             path: '/',
-            element: <DashboardDefault />,
+            element: <InboxPage />,
         },
     ],
 };
