@@ -16,6 +16,7 @@ import { loginSchema } from '@/zod/auth/loginSchema';
 import { useLoginMutation } from '@/features/authentication/apiSlice/login';
 import { setCredentials } from '@/features/authentication/authSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Login({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
     const dispatch = useDispatch();
@@ -114,19 +115,19 @@ function Login({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
                                         </FormItem>
                                     )}
                                 />
-                                <Button type="submit" className="w-full">
+                                <Button type="submit" className="w-full" disabled={isLoading}>
                                     Login
                                 </Button>
                             </form>
                         </Form>
                         <div className="text-center text-sm">
                             Don&apos;t have an account?{' '}
-                            <a
-                                href="#"
+                            <Link
+                                to="/register"
                                 className="underline underline-offset-4"
                             >
                                 Sign up
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     {/* </form> */}
